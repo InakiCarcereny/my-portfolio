@@ -1,4 +1,7 @@
 ---
+import MoonIcon from '../icons/MoonIcon.astro';
+import PersonalIcon from '../icons/PersonalIcon.astro';
+
 interface Props {
 	title: string;
 }
@@ -17,25 +20,26 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<header class="flex items-center justify-between h-[80px] w-full sticky">
+			<button class="mx-2 px-2 py-2 hover:bg-zinc-700 rounded-xl">
+				<PersonalIcon />
+			</button>
+			<div class="mx-2 px-2 py-2 hover:bg-zinc-700 rounded-xl">
+				<MoonIcon />
+			</div>
+		</header>
+		<main class="w-[800px] my-0 mx-auto bg-white">
+			<img class="w-full h-[250px]" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDVwYmUyeWR0dHhvMjF1MjRlcDd3bG13c3hrcnhyb3JzN2x4NXMyMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5GS13A3jXN9xSQF6HL/giphy.gif" alt="">
+			<slot />
+		</main>
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		background-color: #16191d;
 	}
 	code {
 		font-family:
