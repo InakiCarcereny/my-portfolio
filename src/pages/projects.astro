@@ -3,20 +3,20 @@ import Layout from '@/layouts/Layout.astro'
 
 const projects = [{
   name: 'Spotify Clone',
-  description: 'A clone of the Spotify web app using React and the Spotify API.',
+  description: 'About to finish...',
   technology: ['React', 'Astro', 'JavaScript', 'Tailwind'],
   image: 'projects/spotify-clone.avif'
 },
 ]
 ---
-<Layout title="Portafolio | Inaki Carcereny">	
+<Layout title="Portfolio | Inaki Carcereny">	
 
   {
     projects.map(({name, description, technology, image}) => (
       <div class="bg-zinc-700 text-white font-semibold flex items-center justify-center gap-8 rounded-lg h-[200px] border-2 border-zinc-500 rounded-r-none border-r-0 mt-6 hover:scale-105 duration-200">
         <div class="flex flex-col gap-4">
           <h2 class="text-2xl ml-4">{name}</h2>
-          <p class="text-sm ml-4">{description}</p>
+          <p class="text-sm ml-4 max-w-[250px] text-wrap">{description}</p>
           <div class="flex items-center">
             {
               technology.map(tech => (
