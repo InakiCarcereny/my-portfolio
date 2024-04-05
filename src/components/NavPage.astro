@@ -1,18 +1,30 @@
-<div class="w-[600px] mx-auto my-0 mt-20">
+<div class="w-[600px] mx-auto my-0 mt-16">
   <nav class="flex items center justify-center">
     <ul class="flex items-center gap-4">
       <li>
-        <a class="font-semibold text-zinc-500 text-lg hover:bg-zinc-700 px-10 py-2" href="/">About</a>
+        <a class="font-semibold text-zinc-500 text-lg px-10 py-2 relative" href="/">About</a>
       </li>
       <li>
-        <a class="font-semibold text-zinc-500 text-lg hover:bg-zinc-700 px-10 py-2" href="/projects">Projects</a>
+        <a class="font-semibold text-zinc-500 text-lg px-10 py-2 relative" href="/projects">Projects</a>
       </li>
       <li>
-        <a class="font-semibold text-zinc-500 text-lg hover:bg-zinc-700 px-10 py-2" href="/skills">Skills</a>
+        <a class="font-semibold text-zinc-500 text-lg px-10 py-2 relative" href="/skills">Skills</a>
       </li>
     </ul>
   </nav>
-  <main class="pt-8">
+  <main class="mt-16">
     <slot />
   </main>
 </div>
+
+<style>
+  li > a::after {
+    content: '';
+    background: #365314;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 4px;
+    height: 4px;
+    width: 100%;
+  }
