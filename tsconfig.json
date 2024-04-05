@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
+    "baseUrl": "D:/Users/Iñaki/Desktop/Dev/mi-portafolio",
     "paths": {
       "@/*": [
         "src/*"
