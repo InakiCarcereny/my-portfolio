@@ -1,0 +1,36 @@
+---
+import Layout from '@/layouts/Layout.astro'
+
+const projects = [{
+  name: 'Spotify Clone',
+  description: 'A clone of the Spotify web app using React and the Spotify API.',
+  technology: ['React', 'Astro', 'JavaScript', 'Tailwind'],
+  image: 'projects/spotify-clone.avif'
+},
+]
+---
+<Layout title="Portafolio | Inaki Carcereny">	
+
+  {
+    projects.map(({name, description, technology, image}) => (
+      <div class="bg-zinc-700 text-white font-semibold flex items-center justify-center gap-8 rounded-lg h-[200px] border-2 border-zinc-500 rounded-r-none border-r-0 mt-6 hover:scale-105 duration-200">
+        <div class="flex flex-col gap-4">
+          <h2 class="text-2xl ml-4">{name}</h2>
+          <p class="text-sm ml-4">{description}</p>
+          <div class="flex items-center">
+            {
+              technology.map(tech => (
+                <span class="ml-4 text-white bg-lime-900 rounded-xl px-1 py-1">
+                  {tech}  
+                </span>
+              ))
+            }
+          </div>
+        </div>
+        <div>
+          <img class="h-[200px] w-[400px] rounded-l-md" src={image} alt={name}/>
+        </div>
+      </div>
+    ))
+  }
+</Layout>

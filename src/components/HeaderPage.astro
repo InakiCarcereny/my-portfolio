@@ -7,7 +7,22 @@ import MoonIcon from '../icons/MoonIcon.astro'
   <a href="/" class="mx-2 px-2 py-2 hover:bg-zinc-700 rounded-xl">
     <PersonalIcon />
   </a>
-  <div class="mx-2 px-2 py-2 hover:bg-zinc-700 rounded-xl">
+  <button class="moon mx-2 px-2 py-2 hover:bg-zinc-700 rounded-xl">
     <MoonIcon />
-  </div>
+  </button>
 </header>
+
+<style>
+  .active {
+    background-color: #fff;
+  }
+</style>
+
+<script>
+  const button = document.querySelector('.moon')
+  const body = document.querySelector('html')
+
+  button.addEventListener('click', () => {
+    body.classList.toggle('active')
+  })
+</script>
