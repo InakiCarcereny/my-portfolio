@@ -4,10 +4,10 @@ import MoonIcon from '@/icons/MoonIcon.astro'
 ---
 
 <header class="flex items-center justify-between h-[80px] w-full">
-  <a href="/" class="mx-2 px-2 py-2 hover:bg-zinc-700 rounded-xl">
+  <a href="/" aria-hidden="true" aria-label="go back" class="mx-2 px-2 py-2 hover:bg-zinc-700 duration-200 rounded-xl">
     <PersonalIcon />
   </a>
-  <button class="mx-2 px-2 py-2 hover:bg-zinc-700 rounded-xl">
+  <button aria-label="theme" class="mx-2 px-2 py-2 hover:bg-zinc-700 duration-200 rounded-xl absolute right-0">
     <MoonIcon />
   </button>
 </header>
