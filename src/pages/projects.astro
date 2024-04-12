@@ -1,10 +1,35 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import ReactIcon from '@/icons/ReactIcon.astro'
+import AstroIcon from '@/icons/AstroIcon.astro'
+import JavascriptIcon from '@/icons/JavascriptIcon.astro'
+import TailwindIcon from '@/icons/TailwindIcon.astro'
+
+
+const TAGS = {
+    REACT: {
+      nombre: 'React',
+      icono: ReactIcon
+    },
+    ASTRO: {
+      nombre: 'Astro',
+      icono: AstroIcon
+    },
+    JAVASCRIPT: {
+      nombre: 'JavaScript',
+      icono: JavascriptIcon,
+    },
+    TAILWIND: {
+      nombre: 'Tailwind',
+      icono: TailwindIcon
+    }
+}
+
 
 const projects = [{
   name: 'Spotify Clone',
   description: 'About to finish...',
-  technology: ['React', 'Astro', 'JavaScript', 'Tailwind'],
+  technology: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND],
   image: '/image/spotify-clone.avif'
 },
 ]
@@ -13,22 +38,19 @@ const projects = [{
 
   {
     projects.map(({name, description, technology, image}) => (
-      <div class="bg-zinc-700 text-white font-semibold flex items-center justify-center gap-8 rounded-lg h-[200px] border-2 border-zinc-500 rounded-r-none border-r-0 mt-6 hover:scale-105 duration-200">
-        <div class="flex flex-col gap-4">
-          <h2 class="text-2xl ml-4">{name}</h2>
-          <p class="text-sm ml-4 max-w-[250px] text-wrap">{description}</p>
-          <div class="flex items-center">
-            {
-              technology.map(tech => (
-                <span class="ml-4 text-white bg-lime-900 rounded-xl px-1 py-1">
-                  {tech}  
-                </span>
-              ))
-            }
-          </div>
-        </div>
-        <div>
-          <img class="aspect-auto h-[200px] rounded-l-md" src={image} alt={name}/>
+      <div class="bg-zinc-700 text-white font-semibold flex flex-col justify-center gap-6 rounded-lg max-w-[500px] mi-h-[300px] border-2 border-zinc-500 mt-6 mx-auto hover:scale-105 duration-200">
+        <img class="object-fit h-56 rounded-t-lg" src={image} alt={name}>
+        <h4 class="font-semibold text-2xl ml-4">{name}</h4>
+        <p class="ml-4">{description}</p>
+        <div class="flex items-center gap-4 ml-4 mb-2">
+          {
+            technology.map((tag) => (
+              <div class="flex items-center bg-zinc-500 rounded-xl px-2 py-1 gap-2 text-sm sm:text-base">
+                <tag.icono class="size-6"/>
+                <p>{tag.nombre}</p>
+              </div>
+            ))
+          } 
         </div>
       </div>
     ))
