@@ -4,7 +4,7 @@ import ReactIcon from '@/icons/ReactIcon.astro'
 import AstroIcon from '@/icons/AstroIcon.astro'
 import JavascriptIcon from '@/icons/JavascriptIcon.astro'
 import TailwindIcon from '@/icons/TailwindIcon.astro'
-
+import ViteIcon from '@/icons/ViteIcon.astro'
 
 const TAGS = {
     REACT: {
@@ -22,7 +22,12 @@ const TAGS = {
     TAILWIND: {
       nombre: 'Tailwind',
       icono: TailwindIcon
+    },
+    VITE: {
+      nombre: 'Vite',
+      icono: ViteIcon
     }
+    
 }
 
 
@@ -32,6 +37,12 @@ const projects = [{
   technology: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND],
   image: '/image/spotify-clone.avif'
 },
+{
+  name: 'Weather App',
+  description: 'I made this app because I wanted to know the weather in the world',
+  technology: [TAGS.VITE, TAGS.REACT, ],
+  image: '/image/weather-app.avif'
+}
 ]
 ---
 <Layout title="Portfolio | Inaki Carcereny">	
