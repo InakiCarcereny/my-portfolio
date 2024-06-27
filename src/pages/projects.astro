@@ -5,6 +5,7 @@ import AstroIcon from '@/icons/AstroIcon.astro'
 import JavascriptIcon from '@/icons/JavascriptIcon.astro'
 import TailwindIcon from '@/icons/TailwindIcon.astro'
 import ViteIcon from '@/icons/ViteIcon.astro'
+import ReactRouterIcon from '@/icons/ReactRouterIcon.astro'
 
 const TAGS = {
     REACT: {
@@ -26,6 +27,10 @@ const TAGS = {
     VITE: {
       nombre: 'Vite',
       icono: ViteIcon
+    },
+    REACT_ROUTER: {
+      nombre: 'React Router',
+      icono: ReactRouterIcon
     }
     
 }
@@ -34,26 +39,37 @@ const TAGS = {
 const projects = [{
   name: 'Spotify Clone',
   description: 'About to finish...',
-  technology: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND],
+  technology: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND, TAGS.VITE],
   image: '/image/spotify-clone.avif'
 },
 {
   name: 'Weather App',
   description: 'I made this app because I wanted to know the weather in the world',
-  technology: [TAGS.VITE, TAGS.REACT, ],
-  image: '/image/weather-app.avif'
+  technology: [TAGS.VITE, TAGS.REACT, TAGS.TAILWIND ],
+  image: '/image/weatherapp.avif'
+},
+{
+  name: 'Movies App',
+  description: 'I want to implement new skills and learn new things',
+  technology: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE],
+  image: '/image/movieapp.png'
+},
+{
+  name: 'Ecommerce App',
+  description: 'I wanted to learn how to make a good ecommerce app',
+  technology: [TAGS.REACT, TAGS.TAILWIND, TAGS.REACT_ROUTER, TAGS.VITE],
+  image: '/image/ecommerceapp.avif'
 }
 ]
 ---
 <Layout title="Portfolio | Inaki Carcereny">	
-
   {
     projects.map(({name, description, technology, image}) => (
       <div class="bg-zinc-700 text-white font-semibold flex flex-col justify-center gap-6 rounded-lg max-w-[500px] mi-h-[300px] border-2 border-zinc-500 mt-6 mx-auto hover:scale-105 duration-200">
         <img class="object-fit h-56 rounded-t-lg" src={image} alt={name}>
         <h4 class="font-semibold text-2xl ml-4">{name}</h4>
         <p class="ml-4">{description}</p>
-        <div class="flex items-center gap-4 ml-4 mb-2">
+        <div class="flex items-center gap-4 ml-4 mb-2 flex-wrap">
           {
             technology.map((tag) => (
               <div class="flex items-center bg-zinc-500 rounded-xl px-2 py-1 gap-2 text-sm sm:text-base">
